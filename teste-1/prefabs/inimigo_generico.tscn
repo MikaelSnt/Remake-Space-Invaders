@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bnh4e6kk2skyp"]
+
+[ext_resource type="Script" uid="uid://gy2cm8hs530b" path="res://scripts/inimigo_one.gd" id="1_dj7dc"]
+[ext_resource type="Texture2D" uid="uid://c4amxcxy8kthb" path="res://assets/icon.svg" id="1_kl4je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1s53"]
+size = Vector2(128, 128)
+
+[node name="Inimigo_Generico" type="Node2D" unique_id=1122375509]
+
+[node name="inimigo" type="Area2D" parent="." unique_id=1189909236]
+modulate = Color(1, 0.19215687, 1, 1)
+script = ExtResource("1_dj7dc")
+tempo_para_virar = 4.0
+
+[node name="sprite_inimigo" type="Sprite2D" parent="inimigo" unique_id=2026182127]
+texture = ExtResource("1_kl4je")
+
+[node name="collision_inimigo" type="CollisionShape2D" parent="inimigo" unique_id=596411902]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_r1s53")

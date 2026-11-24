@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bykfs2rn11q0y"]
+
+[ext_resource type="Script" uid="uid://c46irn13afqsj" path="res://scripts/nave.gd" id="1_r66lb"]
+[ext_resource type="Texture2D" uid="uid://c4amxcxy8kthb" path="res://assets/icon.svg" id="2_1txc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2jcq"]
+size = Vector2(128.5, 125)
+
+[node name="player" type="Node2D" unique_id=46847648]
+
+[node name="nave" type="CharacterBody2D" parent="." unique_id=93521507]
+position = Vector2(-83, -53)
+script = ExtResource("1_r66lb")
+
+[node name="sprite_nave" type="Sprite2D" parent="nave" unique_id=1481399970]
+position = Vector2(83, 54)
+texture = ExtResource("2_1txc5")
+
+[node name="collision_nave" type="CollisionShape2D" parent="nave" unique_id=420545895]
+position = Vector2(83, 54)
+shape = SubResource("RectangleShape2D_g2jcq")
+
+[node name="PontoDeTiro" type="Marker2D" parent="nave" unique_id=391263727]
+position = Vector2(-476, -1721)

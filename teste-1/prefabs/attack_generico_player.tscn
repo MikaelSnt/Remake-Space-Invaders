@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c0onw1tfcwsjs"]
+
+[ext_resource type="Script" uid="uid://pltwegjaibr7" path="res://scripts/attack_base_player.gd" id="1_qjftj"]
+[ext_resource type="Texture2D" uid="uid://dgmdsr25amkuk" path="res://assets/nave_attack.png" id="2_1i7ge"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rakln"]
+
+[node name="attack_generico_player" type="Node2D" unique_id=648960446]
+
+[node name="attack_player" type="Area2D" parent="." unique_id=1560179883]
+script = ExtResource("1_qjftj")
+
+[node name="sprite_attack" type="Sprite2D" parent="attack_player" unique_id=865866622]
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_1i7ge")
+hframes = 4
+
+[node name="collision_attack" type="CollisionShape2D" parent="attack_player" unique_id=602882312]
+position = Vector2(-14, 16)
+scale = Vector2(1.0274863, 1.3149422)
+shape = SubResource("CapsuleShape2D_rakln")
