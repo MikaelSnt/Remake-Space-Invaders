@@ -10,12 +10,9 @@ class_name Inimigo_base #Criando uma class base
 var cronometro: float = 0.0 # em float pq da para contar melhor 
 
 func _physics_process(delta: float) -> void:
-	# Movimenta de lado 
-	position.x += direcao * velocidade * delta
-	# Conta o tempo
-	cronometro += delta
-	# Quando for igual ao tempo de virar vai zerar o cronômetro, inverter o lado e descer 
-	if cronometro >= tempo_para_virar:
+	position.x += direcao * velocidade * delta # Movimenta de lado 
+	cronometro += delta # Conta o tempo 
+	if cronometro >= tempo_para_virar: # Quando for igual ao tempo de virar vai zerar o cronômetro, inverter o lado e descer
 		cronometro = 0.0
 		direcao *= -1
 		position.y += descida
