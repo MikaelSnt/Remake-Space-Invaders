@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ci3un3u22667l"]
+
+[ext_resource type="Script" uid="uid://ct44wxsc28gmx" path="res://scripts/horda_inimigos.gd" id="1_wu7oj"]
+[ext_resource type="PackedScene" uid="uid://bnh4e6kk2skyp" path="res://prefabs/inimigo_generico.tscn" id="2_dk0cx"]
+[ext_resource type="PackedScene" uid="uid://cdu71075y5dc3" path="res://prefabs/attack_generico_inimigo.tscn" id="3_dk0cx"]
+
+[node name="Horda_inimigos" type="Node2D" unique_id=1807100968]
+script = ExtResource("1_wu7oj")
+cenas_por_linha = Array[PackedScene]([ExtResource("2_dk0cx"), ExtResource("2_dk0cx"), ExtResource("2_dk0cx"), ExtResource("2_dk0cx"), ExtResource("2_dk0cx")])
+espacamento = Vector2(90, 75)
+altura_inicial_y = 130.0
+velocidade_inicial = 70.0
+margem_borda = 45.0
+cena_tiro_inimigo = ExtResource("3_dk0cx")

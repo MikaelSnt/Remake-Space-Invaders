@@ -2,16 +2,38 @@
 
 [ext_resource type="Script" uid="uid://brrjo52wmfwc5" path="res://scripts/canvas.gd" id="1_73jnp"]
 
-[node name="HUD" type="Node2D" unique_id=448144790]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1071822475]
+[node name="HUD" type="CanvasLayer" unique_id=1071822475]
+process_mode = 3
 script = ExtResource("1_73jnp")
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1441399240]
-offset_left = 948.0
-offset_top = 14.0
-offset_right = 1053.0
-offset_bottom = 98.0
-text = "Pontos
-vidas"
-metadata/_edit_use_anchors_ = true
+[node name="texto_Pontos" type="Label" parent="." unique_id=2032815189]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
+text = "Pontos:"
+
+[node name="valor_pontos" type="Label" parent="texto_Pontos" unique_id=2008164279]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 3.0
+offset_right = 223.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 36
+text = "0000"
+
+[node name="texto_Vidas" type="Label" parent="." unique_id=1061812265]
+offset_left = 10.0
+offset_top = 1864.0
+offset_right = 113.0
+offset_bottom = 1914.0
+theme_override_font_sizes/font_size = 36
+text = "Vidas:"
+
+[node name="valor_vidas" type="Label" parent="texto_Vidas" unique_id=398553503]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 2.0
+offset_right = 160.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 36
+text = "3"

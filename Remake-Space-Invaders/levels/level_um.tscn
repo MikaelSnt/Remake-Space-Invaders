@@ -1,22 +1,28 @@
 [gd_scene format=3 uid="uid://dnav0rksnvndf"]
 
 [ext_resource type="PackedScene" uid="uid://bbwcwimn71ifw" path="res://prefabs/hud.tscn" id="1_cdonn"]
-[ext_resource type="PackedScene" uid="uid://bnh4e6kk2skyp" path="res://prefabs/inimigo_generico.tscn" id="1_o70hk"]
+[ext_resource type="PackedScene" uid="uid://ci3un3u22667l" path="res://prefabs/horda_inimigos.tscn" id="1_yh67b"]
 [ext_resource type="PackedScene" uid="uid://bykfs2rn11q0y" path="res://prefabs/player.tscn" id="2_cdonn"]
 
 [node name="level_um" type="Node2D" unique_id=1494116507]
 
-[node name="HUD" parent="." unique_id=448144790 instance=ExtResource("1_cdonn")]
-position = Vector2(6, -3)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2031471045]
+offset_left = -96.00001
+offset_top = -35.999996
+offset_right = 983.0
+offset_bottom = 1874.0
+scale = Vector2(1.1584947, 1.0308447)
+color = Color(0, 0, 0, 1)
 
-[node name="Inimigo_Generico" parent="." unique_id=1122375509 instance=ExtResource("1_o70hk")]
-position = Vector2(746, 147)
+[node name="Player_position" type="Marker2D" parent="." unique_id=251489691]
+position = Vector2(548, 1748)
 
-[node name="Inimigo_Generico2" parent="." unique_id=140886256 instance=ExtResource("1_o70hk")]
-position = Vector2(236, 143)
+[node name="Horda_inimigos" parent="." unique_id=1807100968 instance=ExtResource("1_yh67b")]
 
 [node name="player" parent="." unique_id=46847648 instance=ExtResource("2_cdonn")]
-position = Vector2(549, 1614)
+position = Vector2(545, 1745)
+
+[node name="HUD" parent="." unique_id=448144790 instance=ExtResource("1_cdonn")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1896979416]
 position = Vector2(544, 961)

@@ -1,21 +1,58 @@
 [gd_scene format=3 uid="uid://c0onw1tfcwsjs"]
 
 [ext_resource type="Script" uid="uid://pltwegjaibr7" path="res://scripts/attack_base_player.gd" id="1_qjftj"]
-[ext_resource type="Texture2D" uid="uid://dgmdsr25amkuk" path="res://assets/nave_attack.png" id="2_1i7ge"]
+[ext_resource type="Texture2D" uid="uid://ca8wxdw6x03j1" path="res://assets/tiros/tiro-Sheet.png" id="2_qjftj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rakln"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i7ge"]
+atlas = ExtResource("2_qjftj")
+region = Rect2(0, 0, 16, 16)
 
-[node name="attack_generico_player" type="Node2D" unique_id=648960446]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m00h"]
+atlas = ExtResource("2_qjftj")
+region = Rect2(16, 0, 16, 16)
 
-[node name="attack_player" type="Area2D" parent="." unique_id=1560179883]
+[sub_resource type="AtlasTexture" id="AtlasTexture_81l6d"]
+atlas = ExtResource("2_qjftj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcs5s"]
+atlas = ExtResource("2_qjftj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1s53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i7ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m00h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81l6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcs5s")
+}],
+"loop": 1,
+"name": &"idle ",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i161j"]
+radius = 7.9832463
+height = 26.688671
+
+[node name="attack_player" type="Area2D" unique_id=1560179883 groups=["attack_player"]]
 script = ExtResource("1_qjftj")
+velocidade = 1000.0
 
-[node name="sprite_attack" type="Sprite2D" parent="attack_player" unique_id=865866622]
-scale = Vector2(0.21, 0.21)
-texture = ExtResource("2_1i7ge")
-hframes = 4
+[node name="sprite_tiro" type="AnimatedSprite2D" parent="." unique_id=450662796]
+sprite_frames = SubResource("SpriteFrames_r1s53")
+animation = &"idle "
+frame_progress = 0.034015674
 
-[node name="collision_attack" type="CollisionShape2D" parent="attack_player" unique_id=602882312]
-position = Vector2(-14, 16)
-scale = Vector2(1.0274863, 1.3149422)
-shape = SubResource("CapsuleShape2D_rakln")
+[node name="tiro_collision" type="CollisionShape2D" parent="." unique_id=334286180]
+position = Vector2(0.99999994, -5.9604645e-08)
+scale = Vector2(0.25052464, 0.44962895)
+shape = SubResource("CapsuleShape2D_i161j")

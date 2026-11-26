@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://drmdjix0s31qi"]
+
+[ext_resource type="Script" uid="uid://dl7quypajgo78" path="res://scripts/control.gd" id="1_v8xbx"]
+
+[node name="game_over" type="Control" unique_id=1722803522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8xbx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1082358301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1351015754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="titulo" type="Label" parent="VBoxContainer" unique_id=144616774]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+
+[node name="pontuacao" type="Label" parent="VBoxContainer" unique_id=823571326]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "PONTUAÇÃO:"
+
+[node name="valor_pontu" type="Label" parent="VBoxContainer/pontuacao" unique_id=928969720]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 0.5
+offset_right = 301.0
+offset_bottom = 45.5
+theme_override_font_sizes/font_size = 32
+text = "0000"
+
+[node name="reset_bnt" type="Button" parent="VBoxContainer" unique_id=571816016]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "JOGAR NOVAMENTE"

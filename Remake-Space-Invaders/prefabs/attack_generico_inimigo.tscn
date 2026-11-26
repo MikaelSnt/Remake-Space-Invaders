@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cdu71075y5dc3"]
+
+[ext_resource type="Script" uid="uid://dna10yv1rip1p" path="res://scripts/attack_inimgo_base.gd" id="1_w6jx8"]
+[ext_resource type="Texture2D" uid="uid://ca8wxdw6x03j1" path="res://assets/tiros/tiro-Sheet.png" id="2_t05io"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i7ge"]
+atlas = ExtResource("2_t05io")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m00h"]
+atlas = ExtResource("2_t05io")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81l6d"]
+atlas = ExtResource("2_t05io")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcs5s"]
+atlas = ExtResource("2_t05io")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1s53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i7ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m00h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81l6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcs5s")
+}],
+"loop": 1,
+"name": &"idle ",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i161j"]
+radius = 7.9832463
+height = 26.688671
+
+[node name="attack_inimigo" type="Area2D" unique_id=1560179883 groups=["attack_inimigo", "tiros"]]
+script = ExtResource("1_w6jx8")
+
+[node name="sprite_tiro" type="AnimatedSprite2D" parent="." unique_id=450662796]
+sprite_frames = SubResource("SpriteFrames_r1s53")
+animation = &"idle "
+frame_progress = 0.034015674
+
+[node name="tiro_collision" type="CollisionShape2D" parent="." unique_id=334286180]
+position = Vector2(0.99999994, -5.9604645e-08)
+scale = Vector2(0.25052464, 0.44962895)
+shape = SubResource("CapsuleShape2D_i161j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
