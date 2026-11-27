@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://vx5cws8kpdb8"]
+
+[ext_resource type="PackedScene" uid="uid://btfgs5bn3q8te" path="res://prefabs/bloco_escudo.tscn" id="1_i66gx"]
+
+[node name="escudo" type="Node2D" unique_id=251923728]
+scale = Vector2(3, 3)
+
+[node name="bloco_escudo" parent="." unique_id=1719167065 instance=ExtResource("1_i66gx")]
+
+[node name="bloco_escudo2" parent="." unique_id=95938563 instance=ExtResource("1_i66gx")]
+position = Vector2(22, 44)
+
+[node name="bloco_escudo3" parent="." unique_id=608849535 instance=ExtResource("1_i66gx")]
+position = Vector2(22, 22)
+
+[node name="bloco_escudo4" parent="." unique_id=185324858 instance=ExtResource("1_i66gx")]
+position = Vector2(-22, 44)
+
+[node name="bloco_escudo5" parent="." unique_id=637180783 instance=ExtResource("1_i66gx")]
+position = Vector2(-22, 22)
+
+[node name="bloco_escudo6" parent="." unique_id=887655318 instance=ExtResource("1_i66gx")]
+position = Vector2(0, 22)
+
+[node name="bloco_escudo7" parent="." unique_id=518784305 instance=ExtResource("1_i66gx")]
+position = Vector2(-22, 0)
+
+[node name="bloco_escudo8" parent="." unique_id=684483900 instance=ExtResource("1_i66gx")]
+position = Vector2(22, 0)

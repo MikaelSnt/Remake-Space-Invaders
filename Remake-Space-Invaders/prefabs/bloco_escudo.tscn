@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btfgs5bn3q8te"]
+
+[ext_resource type="Script" uid="uid://xi3smjrbtnfa" path="res://scripts/bloco_escudo.gd" id="1_qujyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1s53"]
+size = Vector2(22, 22)
+
+[node name="bloco_escudo" type="Area2D" unique_id=608849535 groups=["escudos"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_qujyk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=70711345]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+color = Color(0.2, 1, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=133927959]
+light_mask = 4
+visibility_layer = 7
+shape = SubResource("RectangleShape2D_r1s53")

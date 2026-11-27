@@ -347,6 +347,7 @@ b = Vector2(-1000, 0)
 
 [node name="nave" type="CharacterBody2D" unique_id=93521507 groups=["player"]]
 scale = Vector2(0.64635956, 0.71089065)
+collision_mask = 0
 script = ExtResource("1_r66lb")
 
 [node name="sprite_nave" type="AnimatedSprite2D" parent="." unique_id=455265781]
@@ -366,6 +367,8 @@ autoplay = &"idle"
 
 [node name="limite_invasao" type="Area2D" parent="." unique_id=71054443 groups=["limite_invasao"]]
 position = Vector2(-1.5471265, -71.74099)
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limite_invasao" unique_id=1176881924]
 position = Vector2(0, 4.2200584)

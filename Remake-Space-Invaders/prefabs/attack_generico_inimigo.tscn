@@ -43,17 +43,58 @@ animations = [{
 radius = 7.9832463
 height = 26.688671
 
+[sub_resource type="Animation" id="Animation_qjftj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite_tiro:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1i7ge"]
+resource_name = "idle"
+length = 0.23333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite_tiro:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6jx8"]
+_data = {
+&"RESET": SubResource("Animation_qjftj"),
+&"idle": SubResource("Animation_1i7ge")
+}
+
 [node name="attack_inimigo" type="Area2D" unique_id=1560179883 groups=["attack_inimigo", "tiros"]]
+collision_layer = 8
+collision_mask = 101
 script = ExtResource("1_w6jx8")
 
 [node name="sprite_tiro" type="AnimatedSprite2D" parent="." unique_id=450662796]
 sprite_frames = SubResource("SpriteFrames_r1s53")
 animation = &"idle "
-frame_progress = 0.034015674
 
 [node name="tiro_collision" type="CollisionShape2D" parent="." unique_id=334286180]
 position = Vector2(0.99999994, -5.9604645e-08)
 scale = Vector2(0.25052464, 0.44962895)
 shape = SubResource("CapsuleShape2D_i161j")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1944155510]
+libraries/ = SubResource("AnimationLibrary_w6jx8")
+autoplay = &"idle"

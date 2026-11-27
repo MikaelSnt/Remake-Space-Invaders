@@ -3,6 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bbwcwimn71ifw" path="res://prefabs/hud.tscn" id="1_cdonn"]
 [ext_resource type="PackedScene" uid="uid://ci3un3u22667l" path="res://prefabs/horda_inimigos.tscn" id="1_yh67b"]
 [ext_resource type="PackedScene" uid="uid://bykfs2rn11q0y" path="res://prefabs/player.tscn" id="2_cdonn"]
+[ext_resource type="PackedScene" uid="uid://vx5cws8kpdb8" path="res://prefabs/escudo.tscn" id="4_yh67b"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rakln"]
+a = Vector2(1098, 0)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i161j"]
+a = Vector2(1098, 0)
+b = Vector2(0, 0)
 
 [node name="level_um" type="Node2D" unique_id=1494116507]
 
@@ -19,6 +28,18 @@ position = Vector2(548, 1748)
 
 [node name="Horda_inimigos" parent="." unique_id=1807100968 instance=ExtResource("1_yh67b")]
 
+[node name="escudo" parent="." unique_id=15910333 instance=ExtResource("4_yh67b")]
+position = Vector2(116, 1193)
+
+[node name="escudo2" parent="." unique_id=251923728 instance=ExtResource("4_yh67b")]
+position = Vector2(956, 1193)
+
+[node name="escudo3" parent="." unique_id=881738520 instance=ExtResource("4_yh67b")]
+position = Vector2(696, 1193)
+
+[node name="escudo4" parent="." unique_id=979150450 instance=ExtResource("4_yh67b")]
+position = Vector2(421, 1193)
+
 [node name="player" parent="." unique_id=46847648 instance=ExtResource("2_cdonn")]
 position = Vector2(545, 1745)
 
@@ -26,3 +47,20 @@ position = Vector2(545, 1745)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1896979416]
 position = Vector2(544, 961)
+
+[node name="limite_de_cima" type="Area2D" parent="." unique_id=1567244692 groups=["limites_tela"]]
+position = Vector2(13, -24)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite_de_cima" unique_id=309592034]
+position = Vector2(-11, -13)
+shape = SubResource("SegmentShape2D_rakln")
+
+[node name="limite_de_baixo" type="Area2D" parent="." unique_id=1616344360 groups=["limites_tela"]]
+position = Vector2(1, 1942)
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite_de_baixo" unique_id=1323751645]
+shape = SubResource("SegmentShape2D_i161j")
